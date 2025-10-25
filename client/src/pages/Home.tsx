@@ -103,17 +103,17 @@ Focused on improving dataset quality and retraining efficiency.`,
   const socialLinks = [
     {
       platform: 'github' as const,
-      url: 'https://github.com',
+      url: 'https://github.com/nickrwann',
       label: 'GitHub Profile',
     },
     {
       platform: 'linkedin' as const,
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/nick-wanner/',
       label: 'LinkedIn Profile',
     },
     {
       platform: 'instagram' as const,
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/_nickwinner_/?igsh=dzFjemdhdm1hczdo&utm_source=qr#',
       label: 'Instagram Profile',
     },
   ];
