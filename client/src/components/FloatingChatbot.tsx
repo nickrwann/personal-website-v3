@@ -72,13 +72,13 @@ export default function FloatingChatbot() {
         <Button
           onClick={() => setIsExpanded(true)}
           size="icon"
-          className="rounded-full shadow-lg"
+          className="rounded-full shadow-lg peer"
           data-testid="button-chatbot-toggle"
           aria-label="Open chat to ask about Nick"
         >
           <MessageCircle className="h-6 w-6" />
         </Button>
-        <span className="text-sm font-medium text-muted-foreground opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none">
+        <span className="text-sm font-medium text-muted-foreground opacity-0 group-hover:opacity-100 peer-focus-visible:opacity-100 transition-opacity duration-300 pointer-events-none">
           Ask me
         </span>
       </div>
