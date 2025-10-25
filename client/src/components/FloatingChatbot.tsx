@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm';
 const EXAMPLE_PROMPTS = [
   "Why should I hire Nick?",
   "What is Nick best at?",
-  "What does Nick like to do in his free time?",
+  "What does Nick do in his free time?",
 ];
 
 export default function FloatingChatbot() {
