@@ -69,12 +69,19 @@ app.use((req, res, next) => {
   // Serve the app on the port specified in the environment variable PORT
   // Default to 8000 if not specified.
   // This serves both the API and the client.
-  const port = parseInt(process.env.PORT || '8000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  // const port = parseInt(process.env.PORT || '8000', 10);
+  // server.listen({
+  //   port,
+  //   host: "0.0.0.0",
+  //   reusePort: true,
+  // }, () => {
+  //   log(`serving on port ${port}`);
+  // });
+
+  const port = Number(process.env.PORT) || 8000;
+
+  // safer local binding, avoids macOS ENOTSUP issues
+  server.listen(port, '127.0.0.1', () => {
+    log(`Server running at http://127.0.0.1:${port}`);
   });
 })();
