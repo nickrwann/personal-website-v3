@@ -4,6 +4,23 @@
 
 This is a modern, full-stack personal portfolio website built for Nick Wanner, a Software Engineer II at Dell Technologies. The application showcases professional experience, personal background, and features an AI-powered chatbot that answers questions about Nick's work and expertise. The design emphasizes minimalism, clean typography, and responsive layouts inspired by Brittany Chiang's portfolio and Linear's landing page aesthetics.
 
+## Recent Changes
+
+**October 25, 2025**
+- **Chat Feature Enhancements**:
+  - Personalized chat header to "Ask about Nick" with visitor-focused example prompts
+  - Added "Ask me" label next to chat icon with smooth transitions on hover and keyboard focus
+  - Replaced single-line input with auto-expanding textarea (42px-200px height)
+  - Implemented Enter to submit and Shift+Enter for new lines
+  - Enhanced keyboard accessibility using peer/peer-focus-visible pattern
+  - Added smooth scrolling globally and improved ARIA labels
+  - Mobile layout: Chat card now covers theme toggle when open (z-index: 60 vs 50)
+
+- **Theme Improvements**:
+  - Changed default theme to dark mode (previously defaulted to light)
+  - Site now loads in dark mode for first-time visitors
+  - Theme preference still respects user selection and localStorage
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -21,7 +38,7 @@ Preferred communication style: Simple, everyday language.
 - Utilizes shadcn/ui component library based on Radix UI primitives
 - Components follow the "new-york" style variant with CSS variables for theming
 - Tailwind CSS for utility-first styling with custom design tokens
-- Light/Dark mode toggle with system preference detection and localStorage persistence
+- Dark mode by default with light/dark theme toggle, system preference detection, and localStorage persistence
 
 **State Management & Data Fetching**
 - React Query (@tanstack/react-query) for server state management and caching
