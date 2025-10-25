@@ -48,7 +48,7 @@ Preferred communication style: Simple, everyday language.
 **Development Environment:**
 - Vite integration in development mode for HMR (Hot Module Replacement)
 - Separate production build with esbuild for server code
-- Custom error overlay and development tooling for Replit environment
+- Standard Node.js environment compatible with local development and cloud platforms
 
 **Storage Layer:**
 - Abstracted storage interface (`IStorage`) for CRUD operations
@@ -93,7 +93,7 @@ The application uses an in-memory storage implementation by default (`MemStorage
 **Development Tools:**
 - tsx - TypeScript execution for development
 - esbuild - Fast JavaScript/TypeScript bundler for production builds
-- @replit/vite-plugin-* - Replit-specific development enhancements
+- Vite - Modern build tool with fast HMR
 
 **Routing & Navigation:**
 - wouter - Lightweight routing library (alternative to React Router)

@@ -42,13 +42,19 @@ A clean, minimalistic single-page portfolio website built with modern web techno
    npm install
    ```
 
-3. **Start the development server**
+3. **Set up environment variables** (optional)
+   ```bash
+   cp .env.example .env
+   # Edit .env to customize PORT (default: 8000) and other settings
+   ```
+
+4. **Start the development server**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:5000`
+5. **Open your browser**
+   Navigate to `http://localhost:8000`
 
 The application will automatically reload when you make changes to the code.
 
@@ -267,34 +273,51 @@ VITE_WEATHER_API_KEY=your_api_key
 
 ## 🧪 Testing
 
-The project includes end-to-end testing capabilities. To run tests:
+The project is set up for testing. You can add your preferred testing framework:
 
 ```bash
-# Tests are configured to run via Replit's testing tools
-# or you can add your own testing framework
+# Example: Add Vitest for unit tests
+npm install -D vitest @testing-library/react
 ```
 
 ## 📦 Deployment
 
-### Deploy to Replit
+This portfolio is designed to be deployed anywhere. Here are the most popular options:
 
-1. Click the "Publish" button in Replit
-2. Configure your custom domain (optional)
-3. Your site will be live at `your-project.replit.app`
+### Deploy to Vercel (Recommended)
 
-### Deploy to Vercel
-
+**Option 1: Using the Vercel CLI**
 ```bash
 npm install -g vercel
 vercel
 ```
 
+**Option 2: Using Git Integration**
+1. Push your code to GitHub, GitLab, or Bitbucket
+2. Import your repository on [vercel.com](https://vercel.com)
+3. Vercel will auto-detect the configuration and deploy
+4. Your site will be live at `your-project.vercel.app`
+
+**Environment Variables on Vercel:**
+- Navigate to Project Settings → Environment Variables
+- Add `PORT` (default: 8000)
+- Add any API keys (e.g., `VITE_OPENAI_API_KEY`)
+
 ### Deploy to Netlify
 
 ```bash
 npm run build
-# Deploy the dist/ directory
+# Deploy the dist/ directory via Netlify CLI or drag-and-drop
 ```
+
+### Deploy to Any Node.js Host
+
+```bash
+npm run build
+npm run start
+```
+
+Set the `PORT` environment variable to your desired port (default: 8000).
 
 ## 🎯 Performance
 
