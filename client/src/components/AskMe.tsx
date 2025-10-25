@@ -1,11 +1,9 @@
-import { MessageCircle, X, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 
 export default function AskMe() {
-  const [isOpen, setIsOpen] = useState(false);
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -29,118 +27,84 @@ export default function AskMe() {
     console.log('Q&A reset');
   };
 
-  const handleClose = () => {
-    setIsOpen(false);
-    setTimeout(() => {
-      setQuestion('');
-      setAnswer('');
-    }, 300);
-  };
-
   return (
-    <>
-      <Button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 z-40"
-        size="lg"
-        data-testid="button-ask-me"
-      >
-        <MessageCircle className="w-5 h-5 mr-2" />
-        Ask Me
-      </Button>
-
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
-          onClick={handleClose}
-          data-testid="overlay-ask-me"
-        >
-          <Card
-            className="w-full max-w-md p-6 animate-in slide-in-from-bottom-4 duration-300"
-            onClick={(e) => e.stopPropagation()}
-            data-testid="card-ask-me"
+    <section className="py-16 px-6 sm:py-20">
+      <div className="max-w-3xl mx-auto">
+        <div className="border-t border-border pt-12">
+          <h2 
+            className="text-3xl sm:text-4xl font-semibold font-display text-foreground mb-8 text-center"
+            data-testid="text-askme-heading"
           >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-semibold text-foreground">
-                Ask Me Anything
-              </h3>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={handleClose}
-                data-testid="button-close-ask-me"
-              >
-                <X className="w-5 h-5" />
-              </Button>
-            </div>
+            Curious about my work?
+          </h2>
 
+          <div className="max-w-2xl mx-auto">
             {!answer ? (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
+                <div className="flex gap-3">
                   <Input
                     type="text"
                     placeholder="Ask me a question…"
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
                     disabled={isLoading}
-                    className="w-full"
+                    className="flex-1"
                     data-testid="input-question"
-                    autoFocus
                   />
+                  <Button
+                    type="submit"
+                    disabled={!question.trim() || isLoading}
+                    data-testid="button-submit-question"
+                    className="min-w-[100px]"
+                  >
+                    {isLoading ? (
+                      'Thinking...'
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Send
+                      </>
+                    )}
+                  </Button>
                 </div>
-                
-                <Button
-                  type="submit"
-                  className="w-full"
-                  disabled={!question.trim() || isLoading}
-                  data-testid="button-submit-question"
-                >
-                  {isLoading ? (
-                    'Thinking...'
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4 mr-2" />
-                      Submit
-                    </>
-                  )}
-                </Button>
               </form>
             ) : (
-              <div className="space-y-4">
-                <div className="space-y-2">
+              <div className="space-y-6">
+                <div className="space-y-3">
                   <p className="text-sm font-medium text-muted-foreground">
                     Your question:
                   </p>
-                  <p className="text-base text-foreground italic">
-                    "{question}"
+                  <p className="text-base text-foreground italic pl-4 border-l-2 border-border">
+                    {question}
                   </p>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <p className="text-sm font-medium text-muted-foreground">
                     Answer:
                   </p>
                   <p 
-                    className="text-base text-foreground leading-relaxed"
+                    className="text-base text-muted-foreground leading-relaxed"
                     data-testid="text-answer"
                   >
                     {answer}
                   </p>
                 </div>
 
-                <Button
-                  onClick={handleReset}
-                  variant="outline"
-                  className="w-full"
-                  data-testid="button-ask-another"
-                >
-                  Ask another?
-                </Button>
+                <div className="pt-2">
+                  <button
+                    onClick={handleReset}
+                    className="text-sm text-foreground hover-elevate transition-all duration-300 rounded px-3 py-2 -mx-3"
+                    data-testid="button-ask-another"
+                  >
+                    Ask another?
+                  </button>
+                </div>
               </div>
             )}
-          </Card>
+          </div>
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }

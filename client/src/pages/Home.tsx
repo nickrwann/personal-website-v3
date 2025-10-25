@@ -89,10 +89,9 @@ When I'm not coding, you can find me exploring new coffee shops, reading about d
       
       <About content={aboutContent} />
       <Experiences experiences={experiences} />
+      <AskMe />
       <Widgets widgets={widgets} />
       <Footer socialLinks={socialLinks} />
-      
-      <AskMe />
     </div>
   );
 }
