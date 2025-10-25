@@ -7,6 +7,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { question } = req.body;
 
+      // Log the API key (masked) to confirm what’s loaded
+      const key = process.env.OPENROUTER_API_KEY_2;
+      console.log(
+        "OPENROUTER_API_KEY loaded:",
+        key ? `${key.slice(0, 10)}...${key.slice(-6)}` : "(not set)"
+      );
+
       if (!question) {
         return res.status(400).json({ message: "Missing 'question' in request body" });
       }
@@ -14,7 +21,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY_2}`,
           "Content-Type": "application/json",
           "X-Title": "NW Portfolio Website",
         },
