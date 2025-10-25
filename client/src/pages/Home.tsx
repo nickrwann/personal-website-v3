@@ -8,7 +8,7 @@ import Contact from '@/components/Contact';
 import AskMe from '@/components/AskMe';
 
 export default function Home() {
-  const aboutContent = `I'm a software engineer with five years of experience and 20+ patents. 
+  const aboutContent = `I'm an AI engineer with 5+ years of experience and 20+ patents. 
 I specialize in learning new technologies quickly and applying them to solve real problems. 
 I focus on building reliable, scalable systems that move from prototype to product without losing clarity or purpose. 
 
@@ -17,7 +17,7 @@ When I'm not working, you can usually find me exploring the city, traveling, wor
   const experiences = [
     {
       id: '1',
-      role: 'Software Engineer II – CTO Engineering',
+      role: 'Software Engineer II – OCTO Engineering',
       company: 'Dell Technologies',
       period: '2023 – Present',
       description: `Focus on AI systems, distributed services, and internal enablement tools. 
@@ -27,7 +27,7 @@ Along the way, I’ve contributed to over 20 patents in AI and systems design.`,
     },
     {
       id: '2',
-      role: 'Software Engineer – Innovation Studio',
+      role: 'Software Engineer I – Client CTO Engineering',
       company: 'Dell Technologies',
       period: '2021 – 2023',
       description: (
