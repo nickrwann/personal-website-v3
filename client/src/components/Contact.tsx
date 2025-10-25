@@ -8,13 +8,6 @@ interface ContactProps {
 export default function Contact({ location, email }: ContactProps) {
   if (!location && !email) return null;
 
-  const handleEmailClick = () => {
-    if (email) {
-      window.location.href = `mailto:${email}`;
-      console.log(`Opening email client for ${email}`);
-    }
-  };
-
   return (
     <section className="py-8 px-6">
       <div className="max-w-3xl mx-auto">
@@ -30,8 +23,8 @@ export default function Contact({ location, email }: ContactProps) {
           )}
           
           {email && (
-            <button
-              onClick={handleEmailClick}
+            <a
+              href={`mailto:${email}`}
               className="flex items-center gap-2 hover-elevate transition-all duration-300 rounded px-2 py-1 -mx-2"
               data-testid="button-email"
             >
@@ -39,7 +32,7 @@ export default function Contact({ location, email }: ContactProps) {
               <span className="underline decoration-dotted underline-offset-4">
                 {email}
               </span>
-            </button>
+            </a>
           )}
         </div>
       </div>
