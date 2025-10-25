@@ -12,19 +12,35 @@ export default function AskMe() {
     e.preventDefault();
     if (!question.trim()) return;
 
-    console.log('Question submitted:', question);
     setIsLoading(true);
 
-    setTimeout(() => {
-      setAnswer(`Thanks for asking "${question}"! This is where the AI-powered answer would appear. Connect this to your LLM/RAG service to provide real responses.`);
+    try {
+      // Call your backend service at /api/ask
+      const response = await fetch('/api/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ question }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get answer');
+      }
+
+      const data = await response.json();
+      setAnswer(data.answer);
+    } catch (error) {
+      console.error('Error fetching answer:', error);
+      setAnswer('Sorry, there was an error processing your question. Please try again.');
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleReset = () => {
     setQuestion('');
     setAnswer('');
-    console.log('Q&A reset');
   };
 
   return (
