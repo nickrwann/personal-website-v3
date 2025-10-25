@@ -99,14 +99,15 @@ export default function FloatingChatbot() {
             </p>
             <div className="space-y-2">
               {EXAMPLE_PROMPTS.map((prompt, idx) => (
-                <button
+                <Button
                   key={idx}
+                  variant="outline"
                   onClick={() => handleExampleClick(prompt)}
-                  className="w-full text-left text-sm px-3 py-2 rounded-md bg-muted/50 hover-elevate active-elevate-2 text-foreground transition-all"
+                  className="w-full justify-start text-sm"
                   data-testid={`button-example-prompt-${idx}`}
                 >
                   {prompt}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -118,7 +119,7 @@ export default function FloatingChatbot() {
               <p className="text-xs font-medium text-muted-foreground">
                 Question:
               </p>
-              <p className="text-sm text-foreground italic pl-3 border-l-2 border-border">
+              <p className="text-sm text-foreground italic pl-3 border-l-2 border-border" data-testid="text-chatbot-question">
                 {question}
               </p>
             </div>
@@ -150,7 +151,7 @@ export default function FloatingChatbot() {
         )}
 
         {isLoading && (
-          <div className="flex items-center justify-center py-8">
+          <div className="flex items-center justify-center py-8" data-testid="status-loading">
             <div className="text-sm text-muted-foreground">
               Thinking...
             </div>

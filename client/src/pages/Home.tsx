@@ -5,7 +5,6 @@ import Widgets from '@/components/Widgets';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 import Contact from '@/components/Contact';
-import AskMe from '@/components/AskMe';
 
 export default function Home() {
   const aboutContent = `I'm an AI engineer with 5+ years of experience and 20+ patents. 
@@ -134,7 +133,6 @@ Focused on improving dataset quality and retraining efficiency.`,
 
       <About content={aboutContent} />
       <Experiences experiences={experiences} />
-      <AskMe />
       {/* <Widgets widgets={widgets} /> Temporarily hide widgets */}
       <Footer socialLinks={socialLinks} />
     </div>
