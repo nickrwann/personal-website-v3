@@ -79,12 +79,12 @@ When I'm not coding, you can find me exploring new coffee shops, reading about d
       
       <Hero 
         name="Nick Wanner" 
-        tagline="Full-Stack Developer & Creative Problem Solver"
+        tagline="AI Systems Engineer & Creative Problem Solver"
       />
       
       <Contact 
         location="Austin, TX" 
-        email="nick@example.com" 
+        email="nickrwann@gmail.com" 
       />
       
       <About content={aboutContent} />

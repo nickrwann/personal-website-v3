@@ -11,7 +11,7 @@ export default function Hero({ name, tagline, profileImageUrl }: HeroProps) {
     <section className="flex flex-col items-center justify-center py-24 px-6 sm:py-32">
       <div className="flex flex-col items-center max-w-3xl mx-auto text-center">
         <div
-          className="relative mb-8 rounded-full overflow-hidden border-2 border-border w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48"
+          className="relative mb-8 rounded-full overflow-hidden border-2 border-border w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80"
           data-testid="img-profile"
         >
           <img
