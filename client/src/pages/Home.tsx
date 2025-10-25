@@ -8,12 +8,11 @@ import Contact from '@/components/Contact';
 import AskMe from '@/components/AskMe';
 
 export default function Home() {
-
   const aboutContent = `I'm a software engineer with five years of experience and 20+ patents. 
-    I specialize in learning new technologies quickly and applying them to solve real problems. 
-    I focus on building reliable, scalable systems that move from prototype to product without losing clarity or purpose. 
+I specialize in learning new technologies quickly and applying them to solve real problems. 
+I focus on building reliable, scalable systems that move from prototype to product without losing clarity or purpose. 
 
-    When I'm not working, you can usually find me exploring the city, traveling, working out, or hunting down the best latte in town.`;
+When I'm not working, you can usually find me exploring the city, traveling, working out, or hunting down the best latte in town.`;
 
   const experiences = [
     {
@@ -22,9 +21,9 @@ export default function Home() {
       company: 'Dell Technologies',
       period: '2023 – Present',
       description: `Focus on AI systems, distributed services, and internal enablement tools. 
-  I've worked across MLOps pipelines, model optimization with ONNX Runtime, and agentic systems that automate complex workloads. 
-  My work has centered on RAG and multi-agent platforms that help teams use AI more effectively. 
-  Along the way, I’ve contributed to over 20 patents in AI and systems design.`
+I've worked across MLOps pipelines, model optimization with ONNX Runtime, and agentic systems that automate complex workloads. 
+My work has centered on RAG and multi-agent platforms that help teams use AI more effectively. 
+Along the way, I’ve contributed to over 20 patents in AI and systems design.`,
     },
     {
       id: '2',
@@ -42,9 +41,10 @@ export default function Home() {
             className="text-primary hover:underline"
           >
             NYX Wi-Fi gaming controller
-          </a>. These ranged from quick proofs of concept to systems that later made their way into product development.
+          </a>
+          . These ranged from quick proofs of concept to systems that later made their way into product development.
         </>
-      )
+      ),
     },
     {
       id: '3',
@@ -62,9 +62,10 @@ export default function Home() {
             className="text-primary hover:underline"
           >
             Collaboration Touchpad
-          </a>.
+          </a>
+          .
         </>
-      )
+      ),
     },
     {
       id: '4',
@@ -72,50 +73,50 @@ export default function Home() {
       company: 'ThoughtTrace',
       period: '2018',
       description: `Helped automate the training and validation process for classification models used on oil and gas lease documents. 
-  Focused on improving dataset quality and retraining efficiency.`
+Focused on improving dataset quality and retraining efficiency.`,
     },
     {
       id: '5',
       role: 'Peer Teacher – Electrical Engineering',
       company: 'Texas A&M University',
       period: '2019',
-      description: `Taught computer systems fundamentals and supported lab instruction for undergraduate engineering students.`
-    }
+      description: `Taught computer systems fundamentals and supported lab instruction for undergraduate engineering students.`,
+    },
   ];
 
   const widgets = [
     {
       id: 'spotify',
       title: 'Now Playing',
-      description: 'See what I\'m currently listening to on Spotify',
+      description: "See what I'm currently listening to on Spotify",
       icon: 'music' as const,
-      isPlaceholder: true
+      isPlaceholder: true,
     },
     {
       id: 'weather',
       title: 'Local Weather',
       description: 'Current weather conditions in my area',
       icon: 'weather' as const,
-      isPlaceholder: true
-    }
+      isPlaceholder: true,
+    },
   ];
 
   const socialLinks = [
     {
       platform: 'github' as const,
       url: 'https://github.com',
-      label: 'GitHub Profile'
+      label: 'GitHub Profile',
     },
     {
       platform: 'linkedin' as const,
       url: 'https://linkedin.com',
-      label: 'LinkedIn Profile'
+      label: 'LinkedIn Profile',
     },
     {
       platform: 'instagram' as const,
       url: 'https://instagram.com',
-      label: 'Instagram Profile'
-    }
+      label: 'Instagram Profile',
+    },
   ];
 
   return (
@@ -123,17 +124,14 @@ export default function Home() {
       <div className="fixed top-6 right-6 z-50">
         <ThemeToggle />
       </div>
-      
-      <Hero 
-        name="Nick Wanner" 
+
+      <Hero
+        name="Nick Wanner"
         tagline="AI Systems Engineer & Creative Problem Solver"
       />
-      
-      <Contact 
-        location="Austin, TX" 
-        email="nickrwann@gmail.com" 
-      />
-      
+
+      <Contact location="Austin, TX" email="nickrwann@gmail.com" />
+
       <About content={aboutContent} />
       <Experiences experiences={experiences} />
       <AskMe />
