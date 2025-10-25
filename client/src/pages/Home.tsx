@@ -3,6 +3,9 @@ import About from '@/components/About';
 import Experiences from '@/components/Experiences';
 import Widgets from '@/components/Widgets';
 import Footer from '@/components/Footer';
+import ThemeToggle from '@/components/ThemeToggle';
+import Contact from '@/components/Contact';
+import AskMe from '@/components/AskMe';
 
 export default function Home() {
   const aboutContent = `I'm a passionate full-stack developer with a love for creating elegant solutions to complex problems. With over 5 years of experience in web development, I specialize in building scalable applications using modern technologies.
@@ -69,15 +72,27 @@ When I'm not coding, you can find me exploring new coffee shops, reading about d
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen transition-colors duration-300">
+      <div className="fixed top-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
+      
       <Hero 
         name="Alex Johnson" 
         tagline="Full-Stack Developer & Creative Problem Solver"
       />
+      
+      <Contact 
+        location="Austin, TX" 
+        email="alex@example.com" 
+      />
+      
       <About content={aboutContent} />
       <Experiences experiences={experiences} />
       <Widgets widgets={widgets} />
       <Footer socialLinks={socialLinks} />
+      
+      <AskMe />
     </div>
   );
 }
