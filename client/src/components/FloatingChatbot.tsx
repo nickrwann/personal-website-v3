@@ -86,7 +86,7 @@ export default function FloatingChatbot() {
   }
 
   return (
-    <Card className="fixed top-6 left-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] shadow-xl">
+    <Card className="fixed top-6 left-6 z-[60] w-[400px] max-w-[calc(100vw-3rem)] shadow-xl">
       <CardHeader className="flex flex-row items-center justify-between gap-2 space-y-0 pb-4">
         <div className="flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-primary" />
