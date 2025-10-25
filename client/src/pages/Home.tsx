@@ -135,7 +135,7 @@ Focused on improving dataset quality and retraining efficiency.`,
       <About content={aboutContent} />
       <Experiences experiences={experiences} />
       <AskMe />
-      <Widgets widgets={widgets} />
+      {/* <Widgets widgets={widgets} /> Temporarily hide widgets */}
       <Footer socialLinks={socialLinks} />
     </div>
   );
