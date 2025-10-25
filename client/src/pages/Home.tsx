@@ -84,7 +84,7 @@ When I'm not coding, you can find me exploring new coffee shops, reading about d
       
       <Contact 
         location="Austin, TX" 
-        email="alex@example.com" 
+        email="nick@example.com" 
       />
       
       <About content={aboutContent} />

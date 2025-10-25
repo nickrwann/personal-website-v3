@@ -136,19 +136,22 @@ The production-ready files will be generated in the `dist` directory.
 1. **Update Profile Information** (`client/src/pages/Home.tsx`)
    ```tsx
    <Hero 
-     name="Your Name" 
-     tagline="Your Professional Title"
+     name="Nick Wanner" 
+     tagline="Full-Stack Developer & Creative Problem Solver"
    />
    
    <Contact 
-     location="Your City, State" 
-     email="your.email@example.com" 
+     location="Austin, TX" 
+     email="nick@example.com" 
    />
    ```
 
 2. **Replace Profile Picture**
    - Add your photo to `attached_assets/` directory
-   - Update the import in `client/src/components/Hero.tsx`
+   - Update the import in `client/src/components/Hero.tsx`:
+   ```tsx
+   import profileImage from '@assets/your-photo.jpeg';
+   ```
 
 3. **Customize About Me Content**
    ```tsx
