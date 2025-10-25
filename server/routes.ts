@@ -1,15 +1,25 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
-
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
+  // Placeholder endpoint for your backend service
+  // Replace this with your actual implementation
+  app.post("/api/ask", async (req, res) => {
+    try {
+      const { question } = req.body;
+      
+      // TODO: Implement your backend service call here
+      // For now, returning a placeholder response
+      res.json({ 
+        answer: "This is a placeholder. Implement your backend service here." 
+      });
+    } catch (error) {
+      res.status(500).json({ 
+        message: "Error processing question" 
+      });
+    }
+  });
 
   const httpServer = createServer(app);
-
   return httpServer;
 }
