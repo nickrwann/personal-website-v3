@@ -78,7 +78,7 @@ When I'm not coding, you can find me exploring new coffee shops, reading about d
       </div>
       
       <Hero 
-        name="Alex Johnson" 
+        name="Nick Wannner" 
         tagline="Full-Stack Developer & Creative Problem Solver"
       />
       
