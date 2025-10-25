@@ -88,7 +88,7 @@ The project is organized into three main directories: `client`, `server`, and `s
     ```bash
     npm run dev
     ```
-    The application will be available at `http://localhost:8000`.
+    The application will be available at `http://localhost:5000`.
 
 ### Build for Production
 
