@@ -1,4 +1,4 @@
-import profileImage from '@assets/generated_images/Professional_developer_profile_picture_a2d83dbb.png';
+import profileImage from '@assets/attached_assets/IMG_1797.jpeg';
 
 interface HeroProps {
   name: string;
