@@ -1,11 +1,9 @@
-
-import 'dotenv/config';
-import dotenv from "dotenv";
-dotenv.config();
-
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
@@ -72,9 +70,9 @@ app.use((req, res, next) => {
   }
 
   // Serve the app on the port specified in the environment variable PORT
-  // Default to 5000 if not specified.
+  // Default to 8000 if not specified.
   // This serves both the API and the client.
-  // const port = parseInt(process.env.PORT || '5000', 10);
+  // const port = parseInt(process.env.PORT || '8000', 10);
   // server.listen({
   //   port,
   //   host: "0.0.0.0",
@@ -83,7 +81,7 @@ app.use((req, res, next) => {
   //   log(`serving on port ${port}`);
   // });
 
-  const port = Number(process.env.PORT) || 5000;
+  const port = Number(process.env.PORT) || 8000;
 
   // safer local binding, avoids macOS ENOTSUP issues
   server.listen(port, '127.0.0.1', () => {
