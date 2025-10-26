@@ -19,9 +19,16 @@ export default function FloatingChatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  const getWordCount = (text: string): number => {
+    return text.trim() ? text.trim().split(/\s+/).length : 0;
+  };
+
+  const wordCount = getWordCount(question);
+  const isOverLimit = wordCount > 250;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!question.trim()) return;
+    if (!question.trim() || isOverLimit) return;
 
     setIsLoading(true);
     setAnswer('');
@@ -172,32 +179,42 @@ export default function FloatingChatbot() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="flex gap-2 items-end">
-          <Textarea
-            ref={textareaRef}
-            placeholder="Ask a question about Nick..."
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            disabled={isLoading}
-            className="flex-1 min-h-[42px] max-h-[200px] resize-none overflow-y-auto"
-            data-testid="input-chatbot-question"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                handleSubmit(e);
-              }
-            }}
-          />
-          <Button
-            type="submit"
-            size="icon"
-            disabled={!question.trim() || isLoading}
-            data-testid="button-chatbot-submit"
-            aria-label="Send question"
-          >
-            <Send className="h-4 w-4" />
-          </Button>
-        </form>
+        <div className="space-y-1.5">
+          <form onSubmit={handleSubmit} className="flex gap-2 items-end">
+            <Textarea
+              ref={textareaRef}
+              placeholder="Ask a question about Nick..."
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              disabled={isLoading}
+              className="flex-1 min-h-[42px] max-h-[200px] resize-none overflow-y-auto"
+              data-testid="input-chatbot-question"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit(e);
+                }
+              }}
+            />
+            <Button
+              type="submit"
+              size="icon"
+              disabled={!question.trim() || isLoading || isOverLimit}
+              data-testid="button-chatbot-submit"
+              aria-label="Send question"
+            >
+              <Send className="h-4 w-4" />
+            </Button>
+          </form>
+          <div className="flex justify-end">
+            <span 
+              className={`text-xs transition-colors ${isOverLimit ? 'text-destructive' : 'text-muted-foreground'}`}
+              data-testid="text-word-count"
+            >
+              {wordCount}/250 words
+            </span>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
