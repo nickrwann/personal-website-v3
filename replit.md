@@ -6,7 +6,7 @@ This is a modern, full-stack personal portfolio website built for Nick Wanner, a
 
 ## Recent Changes
 
-**October 25, 2025**
+**October 26, 2025**
 - **Chat Feature Enhancements**:
   - Personalized chat header to "Ask about Nick" with visitor-focused example prompts
   - Added "Ask me" label next to chat icon with smooth transitions on hover and keyboard focus
@@ -15,7 +15,9 @@ This is a modern, full-stack personal portfolio website built for Nick Wanner, a
   - Enhanced keyboard accessibility using peer/peer-focus-visible pattern
   - Added smooth scrolling globally and improved ARIA labels
   - Mobile layout: Chat card now covers theme toggle when open (z-index: 60 vs 50)
+  - Added real-time character counter with 250 character limit and visual feedback
 
+**October 25, 2025**
 - **Theme Improvements**:
   - Changed default theme to dark mode (previously defaulted to light)
   - Site now loads in dark mode for first-time visitors

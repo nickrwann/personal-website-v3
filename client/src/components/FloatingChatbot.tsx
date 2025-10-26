@@ -19,12 +19,8 @@ export default function FloatingChatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const getWordCount = (text: string): number => {
-    return text.trim() ? text.trim().split(/\s+/).length : 0;
-  };
-
-  const wordCount = getWordCount(question);
-  const isOverLimit = wordCount > 250;
+  const characterCount = question.length;
+  const isOverLimit = characterCount > 250;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -209,9 +205,9 @@ export default function FloatingChatbot() {
           <div className="flex justify-end">
             <span 
               className={`text-xs transition-colors ${isOverLimit ? 'text-destructive' : 'text-muted-foreground'}`}
-              data-testid="text-word-count"
+              data-testid="text-character-count"
             >
-              {wordCount}/250 words
+              {characterCount}/250
             </span>
           </div>
         </div>
